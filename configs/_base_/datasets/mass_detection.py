@@ -1,5 +1,5 @@
 dataset_type = 'MassDataset'
-data_root = 'data/mass_gamma_correction/'
+data_root = 'data/'
 img_scale = (800, 1600)
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
@@ -34,16 +34,16 @@ data = dict(
     train=dict(
         type=dataset_type,
         ann_file=data_root + 'annotations/train_fold1.csv',
-        img_prefix=data_root,
+        img_prefix=data_root + 'mass_gamma_correction',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         ann_file=data_root + 'annotations/val_fold1.csv',
-        img_prefix=data_root,
+        img_prefix=data_root + 'mass_gamma_correction',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         ann_file=data_root + 'annotations/val_fold1.csv',
-        img_prefix=data_root,
+        img_prefix=data_root + 'mass_gamma_correction',
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='bbox')
